@@ -10,15 +10,11 @@ import { fetchRevenue } from "@/app/lib/data";
 // https://www.chartjs.org/
 // https://airbnb.io/visx/
 
-export default async function RevenueChart({
-  revenue,
-}: {
-  revenue: Revenue[];
-}) {
+export default async function RevenueChart() {
   const chartHeight = 350;
   // NOTE: comment in this code when you get to this point in the course
-  //const revenue: Revenue[] = await fetchRevenue();
-  revenue = await fetchRevenue();
+  const revenue: Revenue[] = await fetchRevenue();
+  //revenue = await fetchRevenue();
 
   const { yAxisLabels, topLabel } = generateYAxis(revenue);
 

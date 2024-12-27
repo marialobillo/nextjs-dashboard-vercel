@@ -1,7 +1,7 @@
 import React from "react";
 import SideNav from "../ui/dashboard/sidenav";
 
-export const experimenta_ppr = true;
+// export const experimenta_ppr = true;
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -1,8 +1,9 @@
 import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { deleteInvoice } from "@/app/lib/actions";
+import { JSX } from "react";
 
-export function CreateInvoice() {
+export function CreateInvoice(): JSX.Element {
   return (
     <Link
       href="/dashboard/invoices/create"
@@ -26,7 +27,11 @@ export function UpdateInvoice({ id }: { id: string }) {
 }
 
 export function DeleteInvoice({ id }: { id: string }) {
-  const deleteInvoiceWithId = deleteInvoice.bind(null, id);
+  // const deleteInvoiceWithId = deleteInvoice.bind(null, id);
+  const deleteInvoiceWithId = async (formData: FormData) => {
+    // Retrieve the `id` value from `formData` if necessary
+    await deleteInvoice(id);
+  };
 
   return (
     <form action={deleteInvoiceWithId}>
